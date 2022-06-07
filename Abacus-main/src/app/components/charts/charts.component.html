@@ -1,0 +1,17 @@
+<div>
+  <div>
+    <div
+      style="display: block"
+      [style.height.rem]="height"
+      [style.width.rem]="width"
+    >
+      <canvas
+        baseChart
+        [data]="doughnutChartData"
+        [type]="doughnutChartType"
+        [labels]="doughnutChartLabels"
+      >
+      </canvas>
+    </div>
+  </div>
+</div>

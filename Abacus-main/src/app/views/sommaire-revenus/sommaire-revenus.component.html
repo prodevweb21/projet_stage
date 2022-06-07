@@ -1,0 +1,89 @@
+<div class="container">
+  <app-match-media-query mediaQuery="(max-width: 992px)">
+    <!--  balance  -->
+    <!-- NAVBAR en attendant  -->
+    <!-- <app-header></app-header> -->
+
+    <h1>Sommaire des revenus</h1>
+  </app-match-media-query>
+
+  <app-match-media-query mediaQuery="(min-width: 992px)">
+    <ngb-accordion #acc="ngbAccordion">
+      <ngb-panel title="Sommaire des revenus">
+        <ng-template ngbPanelContent>
+          <button
+            type="button"
+            class="btn btn-outline-success"
+            (click)="collapse.toggle()"
+            [attr.aria-expanded]="!isCollapsed"
+            aria-controls="collapseExample"
+          >
+            Choisir la période désirée
+          </button>
+
+          <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+            <div>
+              <input type="date" placeholder="Du" #dateO />
+              <input type="date" placeholder="Au" #dateT />
+              <button
+                class="m-1 btn btn-primary"
+                (click)="doFilter(dateO, dateT)"
+              >
+                Filter
+              </button>
+            </div>
+          </div>
+
+          <app-income-table></app-income-table>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </app-match-media-query>
+
+  <app-match-media-query mediaQuery="(max-width: 992px)">
+    <button
+      type="button"
+      class="btn-periode-revenu"
+      (click)="collapse.toggle()"
+      [attr.aria-expanded]="!isCollapsed"
+      aria-controls="collapseExample"
+    >
+      Choisir la période désirée
+    </button>
+
+    <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+      <div>
+        <input type="date" placeholder="Du" #dateO />
+        <input type="date" placeholder="Au" #dateT />
+        <button class="m-1 btn-filtre" (click)="doFilter(dateO, dateT)">
+          Filtrer
+        </button>
+      </div>
+    </div>
+  </app-match-media-query>
+  <div ngbDropdown class="d-inline-block">
+    <app-match-media-query mediaQuery="(max-width: 992px)">
+      <i class="fa-solid fa-calendar-days"></i>
+
+      <h2>Revenu</h2>
+
+      <!--graphique des revenus-->
+      <div *ngIf="incomeList">
+        <app-income-chart width="20" height="20"></app-income-chart>
+      </div>
+    </app-match-media-query>
+
+    <!-- Tableau du sommaires des revenus -->
+    <app-match-media-query mediaQuery="(max-width: 992px)">
+      <app-income-table></app-income-table>
+      <app-match-media-query mediaQuery="(max-width: 992px)">
+        <!--RETOUR TABLEAU DE BORD -->
+        <button class="btn-som-complet" routerLink="/tableauDeBord">
+          RETOUR AU TABLEAU DE BORD
+        </button>
+      </app-match-media-query>
+    </app-match-media-query>
+  </div>
+
+  <!-- <app-footer></app-footer> -->
+</div>

@@ -1,0 +1,158 @@
+@import '../../sass/utils/variables'
+
+body
+    font-family: $body-font
+    font-weight: 400
+    font-size: 0.875rem
+
+    background-image: url('../../assets/img/stripes-light.png')
+main
+    margin: 50px 0
+
+.bordure
+    margin: 20px 0 50px
+    border-top: 15px solid $rougeBase
+    border-bottom: 15px solid $rougeBase
+    height: 40px
+
+.center
+    text-align: center
+
+// BUTTONS
+.btn-som-revenu
+    @include boutton($vertBase, $vertHover)
+    margin: 20px 0
+
+.btn-som-depense
+    @include boutton($rougeBase, $rougeHover)
+    margin: 20px 0
+
+.btn-som-complet
+    @include boutton($bleuBase, $bleuHover)
+    margin: 20px 0
+
+.btn-periode-revenu
+    @include boutton($blanc, $blanc)
+    color: $vertBase
+    border: 1px solid $vertBase
+    width: 80%
+    &:hover
+        color: $vertHover
+        border-color: $vertHover
+
+.btn-periode-depense
+    @include boutton($blanc, $blanc)
+    color: $rougeBase
+    border: 1px solid $rougeBase
+    width: 80%
+    &:hover
+        color: $rougeHover
+        border-color: $rougeHover
+
+.btn-filtre
+    @include boutton($vertBase, $vertHover)
+
+.btn-filtre-depense
+    @include boutton($rougeBase, $rougeHover)
+
+// FORM
+::placeholder
+    color: $grisPale
+    font-size: .875rem
+
+input
+    color: $bleuBase
+    padding: 10px
+    border-radius: 5px
+    border: none
+    margin: 10px 0 20px 0
+
+.input100
+    width: 100%
+
+// FOOTER
+
+footer
+    padding: 50px 0
+
+footer img
+    width: 96px
+
+footer p
+    font-family: $button-font
+    padding-top: 45px
+    color: $blanc
+
+footer p a
+
+    color: $blanc
+    text-decoration: none
+    &:hover
+        color: $rougeBase
+
+#rs
+    margin-top: 20px
+#rs i.fa-brands
+    font-size: 50px
+    color: $blanc
+    &:hover
+        color: $rougeBase
+
+// TABLEAU
+
+.revenu
+    color: $vertBase
+
+.depense
+    color: $rougeBase
+
+// TABLEAU
+
+th
+    color: $bleuBase
+.tableDepense
+    border-bottom: 1px solid $rougeBase
+
+table
+    background-color: $blanc
+    border-top: 3px solid $bleuBase
+    border-bottom: 3px solid $bleuBase
+th, td
+    padding: 15px 5px
+    font-size: 1rem
+
+table thead
+    border-bottom: 3px solid $bleuBase
+
+// CARDS
+
+.depensesCards
+    color: $rougeBase
+    background-color: $rougeBase
+    padding: 0 5px 0 30px
+
+.revenusCards
+    text-align: right
+    color: $vertBase
+    background-color: $vertBase
+    padding: 0 30px 0 5px
+
+.fondBlancCards
+    text-aling: right
+    background-color: $blanc
+    padding: 0 0.75rem
+
+.card
+    background-color: $blanc
+    border: none
+    margin: 1rem 0
+    box-shadow: 0 6px 6px $grisPale
+
+.card-header
+    background-color: $blanc
+    border: none
+    padding: 1rem 0
+
+.card-footer
+    background-color: $blanc
+    border: none

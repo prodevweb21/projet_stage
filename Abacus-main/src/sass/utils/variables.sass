@@ -1,0 +1,91 @@
+// 1.FONT
+// 2.COULEURS
+// 3.POINTS DE RUPTURE
+
+// .....................
+// 1. FONT
+// .............................................................   
+$body-font: 'Poppins', sans-serif
+$button-font: 'Barlow Condensed', sans-serif
+// .....................
+// 2. VARIABLES DE COULEURS
+// .............................................................
+
+// COULEURS GÉNÉRALES DE L'INTERFACE / IMAGE DE MARQUE
+$blanc: #ffffff
+$grisPale: #dbdbdb
+$grisFonce: #a7a6a6
+
+$bleuBase: #215193
+$bleuHover: #031224
+$bleuBalance: #000043
+$rougeConnexion: #a0001f
+
+// COULEURS CALCULATRICE / IMAGE DE MARQUE
+$bleuPale: #C7D3E4
+$bleuOps: rgba(33, 81, 147, 0.5)
+
+// COULEURS REVENU
+$vertBase: #1e8922
+$vertHover: #0E4810
+$vertPale: #C6E1C7
+
+// COULEURS DÉPENSE
+$rougeBase: #da1a32
+$rougeHover: #b51529
+$rougePale: #F6C5CB
+
+// .....................
+// 3. POINTS DE RUPTURE
+// .............................................................
+$breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px,)
+
+// 4.MIXINS
+
+// BUTTON
+@mixin boutton($bg, $hover)
+    font-family: $button-font
+    padding: .5rem 2rem
+    border-radius: 5px
+    border: 0
+    background-color: $bg
+    color: #fff
+    text-transform: uppercase
+    &:hover
+        background-color: $hover
+
+@mixin boutton-contour($color)
+    font-family: $button-font
+    padding: .5rem 2rem
+    border-radius: 5px
+    border: 1px solid $color
+    background-color: #fff
+    color: $border
+    text-transform: uppercase
+    &:hover
+        background-color: $color
+        color: $blanc
+
+// TITRES
+@mixin titre($color)
+    font-family: $button-font
+    font-size: 30px
+    color: $color
+    border-top: 8px double $color
+    border-bottom: 8px double $color
+    padding: 10px 0
+    text-transform: uppercase
+
+// NAV
+@mixin borderNav($color)
+    border-top: 4px solid $color
+    border-bottom: 4px solid $color
+    margin-bottom: 0.15rem
+
+@mixin navItem($color, $hover)
+    color: $color
+    border-bottom: 1px solid $color
+    padding-left: 1rem
+    &:hover
+        color: $blanc
+        background-color: $hover
